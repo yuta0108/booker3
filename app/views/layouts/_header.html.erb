@@ -17,7 +17,7 @@
               <%= link_to books_path, class: "nav-link text-light" do %><i class="fa-solid fa-book-open"></i> Books
             </li><% end %>
             <li class="nav-item">
-              <%= link_to destroy_user_session_path, method: :destroy, class: "nav-link text-light" do %><i class="fa-solid fa-sign-out-alt"></i> Log out
+              <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %><i class="fa-solid fa-sign-out-alt"></i> Log out
             </li><% end %>
           <% else %>
             <li class="nav-item">
