@@ -5,7 +5,7 @@
       <%= render "layouts/new", book: @booknew %>
     </div>
     <div class="col-8 md-8 offset-md-1">
-     <h2>Book detail</h2>
+     <h2>Dog detail</h2>
       <table class="table">
         <tbody>
           <tr>
@@ -14,9 +14,9 @@
             </td>
             <td><%= link_to @book.title, book_path(@book) %></td>
             <td><%= @book.body %></td>
-            <% if @book.user == current_user %>
+            <% if @book.user_id == current_user.id %>
             <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-success btn-sm" %></td>
-            <td><%= link_to "Destroy", books_path(@book), class: "btn btn-danger btn-sm" %></td>
+            <td><%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-danger btn-sm" , "data-confirm" => "本当に削除しますか？" %></td>
             <% end %>
           </tr>
         </tbody>

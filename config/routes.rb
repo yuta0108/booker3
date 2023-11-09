@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :videos
   devise_for :users
   root to: 'homes#top'
   get "/homes/about" => "homes#about", as: "about"

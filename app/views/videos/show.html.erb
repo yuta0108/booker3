@@ -1,0 +1,10 @@
+<% if @video.video.attached? %>
+  <p><%= @video.title %></p><br>
+  <p><%= @video.introduction %></p>
+  <video src = "<%= rails_blob_path(@video.video) %>" type="video/mp4" controls></video><!-- video_tag @video.video 　と書いてしまうと、データを /app/assets/ の方に探しにいくみたいで、アセットパイプラインのエラーが出ます。-->
+  <% if @book.user_id == current_user.id %>
+  <td><%= link_to "Edit", edit_video_path(@video.id), class: "btn btn-success btn-sm" %></td>
+  <td><%= link_to "Destroy", video_path(@video), method: :delete, class: "btn btn-danger btn-sm" , "data-confirm" => "本当に削除しますか？" %></td>
+  <% end %>
+<% end %>
+

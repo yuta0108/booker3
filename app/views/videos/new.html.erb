@@ -1,0 +1,6 @@
+<%= form_with model: @video, local: true do |f| %>
+  <p>title</p><%= f.text_field :title %><br>
+  <p>introduction</p><%= f.text_area :introduction %><br>
+  <p>video</p><%= f.file_field :video %><br>
+  <%= f.submit %>
+<% end %>
